@@ -1,7 +1,7 @@
 # ant-apt-repo
 An Ant plugin to create apt repository from a Debian/Ubuntu development project, derived from the maven plugin which does the same - [theoweiss/apt-repo](https://github.com/theoweiss/apt-repo)
 
-The Ant task is usually useful with the debian package creation task [ant-deb](http://code.google.com/p/ant-deb-task/).
+The Ant task is usually used with the debian package creation task [ant-deb](http://code.google.com/p/ant-deb-task/).
 
 ## Usage
 
