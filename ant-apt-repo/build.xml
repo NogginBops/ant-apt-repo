@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="ant-apt-repo" basedir="." default="jar">
+
+	<property name="src.dir" value="src"/>
+	<property name="classes.dir" value="antbuild"/>
+
+	<target name="clean" description="Delete all generated files">
+		<delete dir="${classes.dir}" failonerror="false"/>
+		<delete file="${ant.project.name}.jar" failonerror="false"/>
+	</target>
+
+	<target name="compile" description="Compiles the Task">
+		<mkdir dir="${classes.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<classpath refid="compile.classpath">
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" description="JARs the Task" depends="compile">
+		<jar destfile="${basedir}/jar/${ant.project.name}.jar" basedir="${classes.dir}"/>
+	</target>
+	<target name="use" description="Use the Task" depends="jar">
+		<taskdef name="aptrepo" classname="com.codemarvels.ant.aptrepotask.AptRepoTask" classpathref="taskdef.classpath"/>
+		<aptrepo repoDir="${basedir}/test-repository"/>
+	</target>
+	<path id="compile.classpath">
+		<fileset dir="${basedir}/lib" >
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	<path id="taskdef.classpath">
+		<fileset dir="${basedir}/lib" >
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${basedir}/jar" >
+			<include name="*.jar"/>
+		</fileset>
+			
+	</path>
+
+</project>
