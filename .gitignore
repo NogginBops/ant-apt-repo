@@ -1,3 +1,4 @@
 /bin/
 /lib/
-ant-apt-repo/antbuild/
+/ant-apt-repo/antbuild/
+/ant-apt-repo/jar/
