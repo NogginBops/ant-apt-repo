@@ -16,17 +16,17 @@ package com.codemarvels.ant.aptrepotask.utils;
  * 
  */
 public enum Hashes {
-  MD5("MD5"), SHA1("SHA-1"), SHA256("SHA-256");
+	MD5("MD5"), SHA1("SHA-1"), SHA256("SHA-256"), SHA512("SHA-512");
 
-  private String hString;
+	private String hString;
 
-  private Hashes(String hString) {
-    this.hString = hString;
-  }
+	private Hashes(String hString) {
+		this.hString = hString;
+	}
 
-  @Override
-  public String toString() {
-    return hString;
-  }
+	@Override
+	public String toString() {
+		return hString;
+	}
 
 }

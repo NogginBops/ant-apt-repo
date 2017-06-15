@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ant-apt-repo/src"/>
+	<classpathentry kind="lib" path="ant-apt-repo/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="ant-apt-repo/lib/plexus-utils-3.0.21.jar"/>
+	<classpathentry kind="lib" path="ant-apt-repo/lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="ant-apt-repo/lib/bcprov-jdk15on-1.57.jar" sourcepath="C:/Users/juliu/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.57/bcprov-jdk15on-1.57-sources.jar"/>
+	<classpathentry kind="lib" path="ant-apt-repo/lib/commons-compress-1.14.jar"/>
+	<classpathentry kind="lib" path="ant-apt-repo/lib/ant.jar"/>
+	<classpathentry kind="lib" path="ant-apt-repo/lib/bcpg-jdk15on-1.57.jar" sourcepath="C:/Users/juliu/Desktop/bcpg-jdk15on-157/src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/juliu/Desktop/bcpg-jdk15on-157.zip!/bcpg-jdk15on-157/javadoc"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

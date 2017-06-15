@@ -11,7 +11,7 @@
 
 	<target name="compile" description="Compiles the Task">
 		<mkdir dir="${classes.dir}"/>
-		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true">
 			<classpath refid="compile.classpath">
 			</classpath>
 		</javac>
@@ -22,7 +22,7 @@
 	</target>
 	<target name="use" description="Use the Task" depends="jar">
 		<taskdef name="aptrepo" classname="com.codemarvels.ant.aptrepotask.AptRepoTask" classpathref="taskdef.classpath"/>
-		<aptrepo repoDir="${basedir}/test-repository"/>
+		<aptrepo repoDir="${basedir}/test-repository" sign="true" key="6ACC207D" passphrase="Bo01eBo02x.." keyring="C:\Users\juliu\AppData\Local\lxss\home\Julius\.gnupg\secring.gpg"/>
 	</target>
 	<path id="compile.classpath">
 		<fileset dir="${basedir}/lib" >
@@ -36,7 +36,6 @@
 		<fileset dir="${basedir}/jar" >
 			<include name="*.jar"/>
 		</fileset>
-			
 	</path>
 
 </project>

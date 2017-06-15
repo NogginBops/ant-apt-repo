@@ -31,42 +31,45 @@ import java.util.TimeZone;
  * 
  */
 public class Release {
-  String date;
-  List<ReleaseInfo> infos = new ArrayList<ReleaseInfo>();
+	String date;
+	List<ReleaseInfo> infos = new ArrayList<ReleaseInfo>();
 
-  public Release() {
-    SimpleDateFormat dateFormat =
-        (SimpleDateFormat) DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.ENGLISH);
-    dateFormat.applyPattern("EEE, d MMM yyyy HH:mm:ss z");
-    dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-    this.date = dateFormat.format(new Date());
-  }
+	public Release() {
+		SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.ENGLISH);
+		dateFormat.applyPattern("EEE, d MMM yyyy HH:mm:ss z");
+		dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+		this.date = dateFormat.format(new Date());
+	}
 
-  public void setDate(String date) {
-    this.date = date;
-  }
+	public void setDate(String date) {
+		this.date = date;
+	}
 
-  public void addInfo(ReleaseInfo info) {
-    infos.add(info);
-  }
+	public void addInfo(ReleaseInfo info) {
+		infos.add(info);
+	}
 
-  @Override
-  public String toString() {
-    StringBuffer b = new StringBuffer();
-    b.append("Date: " + date + "\n");
-    b.append("MD5Sum:\n");
-    for (ReleaseInfo info : infos) {
-      b.append(String.format(" %s  %s %s\n", info.getMd5hash(), info.getSize(), info.getName()));
-    }
-    b.append("SHA1:\n");
-    for (ReleaseInfo info : infos) {
-      b.append(String.format(" %s  %s %s\n", info.getSha1hash(), info.getSize(), info.getName()));
-    }
-    b.append("SHA256:\n");
-    for (ReleaseInfo info : infos) {
-      b.append(String.format(" %s  %s %s\n", info.getSha256hash(), info.getSize(), info.getName()));
-    }
-    return b.toString();
-  }
+	@Override
+	public String toString() {
+		StringBuffer b = new StringBuffer();
+		b.append("Date: " + date + "\n");
+		b.append("MD5Sum:\n");
+		for (ReleaseInfo info : infos) {
+			b.append(String.format(" %s  %s %s\n", info.getMd5hash(), info.getSize(), info.getName()));
+		}
+		b.append("SHA1:\n");
+		for (ReleaseInfo info : infos) {
+			b.append(String.format(" %s  %s %s\n", info.getSha1hash(), info.getSize(), info.getName()));
+		}
+		b.append("SHA256:\n");
+		for (ReleaseInfo info : infos) {
+			b.append(String.format(" %s  %s %s\n", info.getSha256hash(), info.getSize(), info.getName()));
+		}
+		b.append("SHA512:\n");
+		for (ReleaseInfo info : infos) {
+			b.append(String.format(" %s  %s %s\n", info.getSha512hash(), info.getSize(), info.getName()));
+		}
+		return b.toString();
+	}
 
 }
